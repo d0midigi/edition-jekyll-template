@@ -769,7 +769,7 @@ input::-ms-clear,input::-ms-reveal {
 body {
     height: auto;
     overflow-x: hidden;
-    background-color: #2B2E31
+    background-color: #000000
 }
 
 body.nav-open {
@@ -1178,8 +1178,8 @@ blockquote {
     padding: 10px 15px;
     margin-left: -15px;
     margin-right: -10px;
-    background-color: #ebf3fb;
-    border-color: #3583d6
+    background-color: #000000;
+    border-color: #f51994
 }
 
 blockquote p:last-child,blockquote .settings-panel-example:last-child {
