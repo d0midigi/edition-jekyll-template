@@ -933,6 +933,7 @@ header .open-nav:hover {
 }
 
 .content,.page-header {
+    background-color: #000000;
     max-width: 800px;
     padding: 0 25px 20px;
     margin: 20px auto 0 auto
