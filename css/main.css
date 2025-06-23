@@ -814,7 +814,7 @@ body::before {
     body::after {
         left: 0;
         width: 300px;
-        background-color: #151b23
+        background-color: #000000
     }
 
     body #search-input,body::after {
