@@ -52,25 +52,35 @@
 							{% assign items = group.items | sort: 'order' %}
 							<a href="{{ site.baseurl }}{{ items.first.url }}">{{ group.name }}</a>
 
-							<!-- Nested Menu for fbmain and fb2 -->
+							<!-- Begin nested submenu for fbmain and fb2 -->
 							<ul>
+								{% assign fbmain_item = nil %}
+								{% assign fb2_item = nil %}
+								
 								{% for item in items %}
-									<!-- Check if it's fbmain -->
+									<!-- Find fbmain and store it in a variable -->
 									{% if item.title == "fbmain" %}
-										<li class="nav-item">
-											<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-											
-											<!-- If fb2 exists, nest it under fbmain -->
-											<ul>
-												{% for subitem in items %}
-													{% if subitem.title == "fb2" %}
-														<li class="nav-item"><a href="{{ site.baseurl }}{{ subitem.url }}">{{ subitem.title }}</a></li>
-													{% endif %}
-												{% endfor %}
-											</ul>
-										</li>
+										{% assign fbmain_item = item %}
+									{% endif %}
+									<!-- Find fb2 and store it in a variable -->
+									{% if item.title == "fb2" %}
+										{% assign fb2_item = item %}
 									{% endif %}
 								{% endfor %}
+
+								<!-- Display fbmain as top-level and nest fb2 under it -->
+								{% if fbmain_item %}
+									<li class="nav-item">
+										<a href="{{ site.baseurl }}{{ fbmain_item.url }}">{{ fbmain_item.title }}</a>
+										
+										<!-- If fb2 exists, nest it under fbmain -->
+										{% if fb2_item %}
+											<ul>
+												<li class="nav-item"><a href="{{ site.baseurl }}{{ fb2_item.url }}">{{ fb2_item.title }}</a></li>
+											</ul>
+										{% endif %}
+									</li>
+								{% endif %}
 							</ul>
 						</li>
 					{% endfor %}
