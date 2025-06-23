@@ -2,7 +2,7 @@
 title: Facebook
 category: Contact Syncing
 order: 1
-
+nested-items: fb1.md
 ---
 
 Sync your Facebook contacts with ChatApp. Any of your Facebook friends with ChatApp accounts are automatically added to your contact list!
