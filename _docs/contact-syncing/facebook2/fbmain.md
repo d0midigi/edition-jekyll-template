@@ -1,6 +1,7 @@
 ---
-title: fbmain
-category: facebook2
+title: "fbmain"
+category: "facebook2"  # Category to group fbmain and fb2 together
 order: 1
-nested-items: fb2.md
+
+# Content for fbmain
 ---
